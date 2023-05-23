@@ -1,0 +1,111 @@
+13:16:47 **** Incremental Build of configuration Debug for project lab4_2_renewed ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xC -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:78:12: warning: 'sentence_counter' initialized and declared 'extern'
+   78 | extern int sentence_counter = 0;
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:79:12: warning: 'input_completed' initialized and declared 'extern'
+   79 | extern int input_completed = 0;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:80:12: warning: 'is_similar' initialized and declared 'extern'
+   80 | extern int is_similar = 0;
+      |            ^~~~~~~~~~
+../Core/Src/main.c:81:15: warning: 'similarity_percentage' initialized and declared 'extern'
+   81 | extern double similarity_percentage = 0;
+      |               ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'contains':
+../Core/Src/main.c:85:9: warning: implicit declaration of function 'strstr' [-Wimplicit-function-declaration]
+   85 |     if (strstr(string1, string2) != NULL) {
+      |         ^~~~~~
+../Core/Src/main.c:85:9: warning: incompatible implicit declaration of built-in function 'strstr'
+../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'strstr'
+   20 | #include "main.h"
+  +++ |+#include <string.h>
+   21 | 
+../Core/Src/main.c: In function 'jaro_winkler_similarity':
+../Core/Src/main.c:93:16: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   93 |     int len1 = strlen(s1);
+      |                ^~~~~~
+../Core/Src/main.c:93:16: warning: incompatible implicit declaration of built-in function 'strlen'
+../Core/Src/main.c:93:16: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:162:6: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+  162 |      strcpy(sentence_1, buffer);
+      |      ^~~~~~
+../Core/Src/main.c:162:6: warning: incompatible implicit declaration of built-in function 'strcpy'
+../Core/Src/main.c:162:6: note: include '<string.h>' or provide a declaration of 'strcpy'
+../Core/Src/main.c:162:13: warning: pointer targets in passing argument 1 of 'strcpy' differ in signedness [-Wpointer-sign]
+  162 |      strcpy(sentence_1, buffer);
+      |             ^~~~~~~~~~
+      |             |
+      |             unsigned char *
+../Core/Src/main.c:162:13: note: expected 'char *' but argument is of type 'unsigned char *'
+../Core/Src/main.c:162:25: warning: pointer targets in passing argument 2 of 'strcpy' differ in signedness [-Wpointer-sign]
+  162 |      strcpy(sentence_1, buffer);
+      |                         ^~~~~~
+      |                         |
+      |                         unsigned char *
+../Core/Src/main.c:162:25: note: expected 'const char *' but argument is of type 'unsigned char *'
+../Core/Src/main.c:165:13: warning: pointer targets in passing argument 1 of 'strcpy' differ in signedness [-Wpointer-sign]
+  165 |      strcpy(sentence_2, buffer);
+      |             ^~~~~~~~~~
+      |             |
+      |             unsigned char *
+../Core/Src/main.c:165:13: note: expected 'char *' but argument is of type 'unsigned char *'
+../Core/Src/main.c:165:25: warning: pointer targets in passing argument 2 of 'strcpy' differ in signedness [-Wpointer-sign]
+  165 |      strcpy(sentence_2, buffer);
+      |                         ^~~~~~
+      |                         |
+      |                         unsigned char *
+../Core/Src/main.c:165:25: note: expected 'const char *' but argument is of type 'unsigned char *'
+../Core/Src/main.c:170:52: warning: pointer targets in passing argument 1 of 'jaro_winkler_similarity' differ in signedness [-Wpointer-sign]
+  170 |    similarity_percentage = jaro_winkler_similarity(sentence_1, sentence_2) * 100;
+      |                                                    ^~~~~~~~~~
+      |                                                    |
+      |                                                    unsigned char *
+../Core/Src/main.c:92:38: note: expected 'char *' but argument is of type 'unsigned char *'
+   92 | double jaro_winkler_similarity(char* s1, char* s2) {
+      |                                ~~~~~~^~
+../Core/Src/main.c:170:64: warning: pointer targets in passing argument 2 of 'jaro_winkler_similarity' differ in signedness [-Wpointer-sign]
+  170 |    similarity_percentage = jaro_winkler_similarity(sentence_1, sentence_2) * 100;
+      |                                                                ^~~~~~~~~~
+      |                                                                |
+      |                                                                unsigned char *
+../Core/Src/main.c:92:48: note: expected 'char *' but argument is of type 'unsigned char *'
+   92 | double jaro_winkler_similarity(char* s1, char* s2) {
+      |                                          ~~~~~~^~
+../Core/Src/main.c:188:25: warning: pointer targets in passing argument 1 of 'contains' differ in signedness [-Wpointer-sign]
+  188 |    int is_on = contains(buffer, "on");
+      |                         ^~~~~~
+      |                         |
+      |                         unsigned char *
+../Core/Src/main.c:84:20: note: expected 'char *' but argument is of type 'unsigned char *'
+   84 | int contains(char *string1, char *string2) {
+      |              ~~~~~~^~~~~~~
+../Core/Src/main.c:189:26: warning: pointer targets in passing argument 1 of 'contains' differ in signedness [-Wpointer-sign]
+  189 |    int is_off = contains(buffer, "off");
+      |                          ^~~~~~
+      |                          |
+      |                          unsigned char *
+../Core/Src/main.c:84:20: note: expected 'char *' but argument is of type 'unsigned char *'
+   84 | int contains(char *string1, char *string2) {
+      |              ~~~~~~^~~~~~~
+../Core/Src/main.c:199:4: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  199 |    memset(buffer, 0, sizeof(buffer));
+      |    ^~~~~~
+../Core/Src/main.c:199:4: warning: incompatible implicit declaration of built-in function 'memset'
+../Core/Src/main.c:199:4: note: include '<string.h>' or provide a declaration of 'memset'
+arm-none-eabi-gcc -o "lab4_2_renewed.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\smhho\STM32CubeIDE\workspace_1.11.2\lab4_2_renewed\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab4_2_renewed.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lab4_2_renewed.elf
+ 
+arm-none-eabi-size   lab4_2_renewed.elf 
+arm-none-eabi-objdump -h -S  lab4_2_renewed.elf  > "lab4_2_renewed.list"
+   text	   data	    bss	    dec	    hex	filename
+  19100	     20	   2716	  21836	   554c	lab4_2_renewed.elf
+Finished building: default.size.stdout
+ 
+Finished building: lab4_2_renewed.list
+ 
+
+13:16:47 Build Finished. 0 errors, 20 warnings. (took 683ms)
+

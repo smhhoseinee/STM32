@@ -1,0 +1,17 @@
+16:38:23 **** Build of configuration Debug for project smh_test ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xC -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "smh_test.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\smhho\STM32CubeIDE\workspace_1.11.2\smh_test\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="smh_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: smh_test.elf
+ 
+arm-none-eabi-size   smh_test.elf 
+arm-none-eabi-objdump -h -S  smh_test.elf  > "smh_test.list"
+   text	   data	    bss	    dec	    hex	filename
+  11292	     20	   2500	  13812	   35f4	smh_test.elf
+Finished building: default.size.stdout
+ 
+Finished building: smh_test.list
+ 
+
+16:38:24 Build Finished. 0 errors, 0 warnings. (took 1s.45ms)
+

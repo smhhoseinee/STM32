@@ -1,0 +1,10 @@
+00:11:51 **** Incremental Build of configuration Debug for project Sample_Timer ****
+make -j16 all 
+arm-none-eabi-size   Sample_Timer.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18104	     20	   2724	  20848	   5170	Sample_Timer.elf
+Finished building: default.size.stdout
+ 
+
+00:11:52 Build Finished. 0 errors, 0 warnings. (took 253ms)
+

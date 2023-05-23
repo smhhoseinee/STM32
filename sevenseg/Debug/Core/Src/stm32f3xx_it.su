@@ -1,0 +1,16 @@
+../Core/Src/stm32f3xx_it.c:55:6:num1	24	static
+../Core/Src/stm32f3xx_it.c:67:6:num2	24	static
+../Core/Src/stm32f3xx_it.c:79:6:num3	24	static
+../Core/Src/stm32f3xx_it.c:90:6:num4	24	static
+../Core/Src/stm32f3xx_it.c:102:5:decimalToBinary	40	static
+../Core/Src/stm32f3xx_it.c:120:8:jaro_winkler_similarity	80	static
+../Core/Src/stm32f3xx_it.c:171:6:NMI_Handler	4	static
+../Core/Src/stm32f3xx_it.c:186:6:HardFault_Handler	4	static
+../Core/Src/stm32f3xx_it.c:201:6:MemManage_Handler	4	static
+../Core/Src/stm32f3xx_it.c:216:6:BusFault_Handler	4	static
+../Core/Src/stm32f3xx_it.c:231:6:UsageFault_Handler	4	static
+../Core/Src/stm32f3xx_it.c:246:6:SVC_Handler	4	static
+../Core/Src/stm32f3xx_it.c:259:6:DebugMon_Handler	4	static
+../Core/Src/stm32f3xx_it.c:272:6:PendSV_Handler	4	static
+../Core/Src/stm32f3xx_it.c:285:6:SysTick_Handler	8	static
+../Core/Src/stm32f3xx_it.c:306:6:TIM2_IRQHandler	8	static
